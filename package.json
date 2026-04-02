@@ -1,14 +1,13 @@
 {
-  "name": "novafactions-behaviors",
+  "name": "behavior-pack-template",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "pack": "node bin/build.js",
     "build": "tsc && node bin/build.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "All Realms Are Safe",
   "license": "MIT",
   "type": "commonjs",
   "devDependencies": {
