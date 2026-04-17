@@ -25,5 +25,19 @@
         "authors": ["All Realms Are Safe"],
         "product_type": "addon",
         "url": "https://github.com/All-Realms-Are-Safe"
-    }
+    },
+    "dependencies": [
+        {
+            "module_name": "@minecraft/server",
+            "version": "beta"
+        },
+        {
+            "module_name": "@minecraft/server-ui",
+            "version": "beta"
+        },
+        {
+            "module_name": "@minecraft/server-gametest",
+            "version": "beta"
+        }
+    ]
 }
