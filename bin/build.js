@@ -2,7 +2,7 @@ const archiver = require("archiver");
 const path = require("node:path");
 const fs = require("node:fs");
 
-const root = path.join(__dirname, "..")
+const root = path.join(__dirname, "..");
 const manifest = JSON.parse(fs.readFileSync(path.join(root, "manifest.json"), "utf8"));
 const packName = manifest.header.name.replace(/\s+/g, "_");
 const version = manifest.header.version;
@@ -15,14 +15,13 @@ const exclude = [
     "bin",
     "node_modules",
     "src",
-    ".git",
-    ".gitignore",
-    ".npmrc",
     "package-lock.json",
     "package.json",
     "tsconfig.json",
     "README.md"
 ];
+const isExcluded = (entry) => 
+    entry.startsWith(".") || exclude.includes(entry) || entry.endsWith(".mcpack");
 
 fs.readdirSync(root)
     .filter((f) => f.endsWith(".mcpack"))
@@ -31,6 +30,11 @@ fs.readdirSync(root)
 output.on("close", () => {
     const size = (archive.pointer() / 1024).toFixed(1);
     console.log(`\nPacked: ${path.basename(outputPath)} (${size} KB)`);
+});
+
+output.on("error", (err) => {
+    console.error(`Failed writing ${path.basename(outputPath)}: ${err.message}`);
+    process.exit(1);
 });
 
 archive.on("warning", (err) => {
@@ -43,7 +47,7 @@ archive.on("error", (err) => { throw err; });
 archive.pipe(output);
 
 for (const entry of fs.readdirSync(root)) {
-    if (exclude.includes(entry) || entry.endsWith(".mcpack")) continue;
+    if (isExcluded(entry)) continue;
     const fullPath = path.join(root, entry);
     const stat = fs.statSync(fullPath);
     if (stat.isDirectory()) {

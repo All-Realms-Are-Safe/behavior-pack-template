@@ -2,7 +2,7 @@
 Helpful template repository for building [Behavior Packs](https://wiki.bedrock.dev/scripting/scripting-intro) in TypeScript.
 
 ## Setup
-1. Clone this repository 
+1. [Create a new repository using this template](https://github.com/new?template_name=behavior-pack-template&template_owner=All-Realms-Are-Safe)
 2. Run `npm install`
 
 You now have great intellisense to make development quick and easy!
@@ -24,6 +24,6 @@ The .mcpack created from this template looks like:
 
 ## Roadmap
 - [ ] Auto `/reload` script for development on worlds
-- [ ] Auto update version/uuid in `build` script
+- [x] Auto update version/uuid in `build` script
 - [ ] webpack/esbuild stuff?
-- [ ] Workflows to run tests and bump version?
+- ~~[ ] Workflows to run tests and bump version?~~

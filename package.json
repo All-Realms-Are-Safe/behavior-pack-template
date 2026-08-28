@@ -10,13 +10,11 @@
   "author": "All Realms Are Safe",
   "license": "MIT",
   "type": "commonjs",
-  "devDependencies": {
-    "archiver": "^7.0.1"
-  },
   "dependencies": {
-    "@minecraft/server": "^2.8.0-beta.1.26.20-preview.23",
-    "@minecraft/server-admin": "^1.0.0-beta.1.26.20-preview.23",
-    "@minecraft/server-gametest": "^1.0.0-beta.1.26.20-preview.23",
-    "@minecraft/server-ui": "^2.1.0-beta.1.26.20-preview.23"
+    "archiver": "^7.0.1",
+    "@minecraft/server": "2.11.0-beta.1.26.50-preview.27",
+    "@minecraft/server-ui": "2.3.0-beta.1.26.50-preview.27",
+    "@minecraft/server-admin": "1.0.0-beta.1.26.50-preview.27",
+    "@minecraft/server-gametest": "1.0.0-beta.1.26.50-preview.27"
   }
 }
