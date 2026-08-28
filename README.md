@@ -24,6 +24,6 @@ The .mcpack created from this template looks like:
 
 ## Roadmap
 - [ ] Auto `/reload` script for development on worlds
-- [x] Auto update version/uuid in `build` script
+- ~~[ ] Auto update version/uuid in `build` script~~
 - [ ] webpack/esbuild stuff?
 - ~~[ ] Workflows to run tests and bump version?~~
