@@ -12,7 +12,6 @@
     "noImplicitOverride": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
     "isolatedModules": true
   },
   "include": ["src"],
